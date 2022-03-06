@@ -17,7 +17,7 @@ function convertToEmoji(text) {
       return /\S/.test(arr);
     });
     for (i = 0; i < str.length; i++) {
-      if (emoji.URLS[str[i]] != undefined) {
+      if (emoji.URLS[str[i]] !== undefined) {
         var output = emoji.of(str[i]);
         var emojiImage = output.url.replace(
           "assets-cdn.github",
@@ -50,9 +50,9 @@ module.exports.updateHTML = (username, opts) => {
 
           for (var i = 0; i < repos.length; i++) {
             let element;
-            if (repos[i].fork == false) {
+            if (repos[i].fork === false) {
               element = document.getElementById("work_section");
-            } else if (includeFork == true) {
+            } else if (includeFork === true) {
               document.getElementById("forks").style.display = "block";
               element = document.getElementById("forks_section");
             } else {
@@ -64,7 +64,7 @@ module.exports.updateHTML = (username, opts) => {
                             <div class="section_title">${repos[i].name}</div>
                             <div class="about_section">
                             <span style="display:${
-                              repos[i].description == undefined
+                              repos[i].description === undefined
                                 ? "none"
                                 : "block"
                             };">${convertToEmoji(repos[i].description)}</span>
@@ -118,16 +118,15 @@ module.exports.updateHTML = (username, opts) => {
                 };"><i class="fas fa-envelope"></i> &nbsp; ${user.email}</span>
                 <span style="display:${
                   user.blog == null || !user.blog ? "none" : "block"
-                };"><i class="fas fa-link"></i> &nbsp; <a href="${user.blog}">${
-            user.blog
-          }</a></span>
+                };"><i class="fas fa-link"></i> &nbsp; <a style="color:#fff; text-decoration: none;" href="${user.blog}">Home Page
+          </a></span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
                 };"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; ${
             user.location
           }</span>
                 <span style="display:${
-                  user.hireable == false || !user.hireable ? "none" : "block"
+                  user.hireable === false || !user.hireable ? "none" : "block"
                 };"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
                 <span style="display:${

@@ -125,6 +125,7 @@ module.exports.updateHTML = (username, opts) => {
                 };"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; ${
             user.location
           }</span>
+                <span id="codeTime" ></span>
                 <span style="display:${
                   user.hireable === false || !user.hireable ? "none" : "block"
                 };"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
